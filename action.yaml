@@ -21,7 +21,7 @@ runs:
             await github.rest.repos.createRelease({
               repo: context.repo.repo,
               owner: context.repo.owner,
-              tag_name: ${{ inputs.github-token }},
+              tag_name: "${{ inputs.tag-name }}",
             });
           } catch (error) {
             core.setFailed(error.message);
